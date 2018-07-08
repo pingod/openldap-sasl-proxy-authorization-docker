@@ -17,6 +17,8 @@ ARG LDAP_ROOT_PW=secret
 
 ENV OPENLDAP_VERSION 2.4.44
 
+RUN sed -i 's/archive.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list
+
 RUN apt-get update && apt-get install -y \
   curl \
   build-essential \
